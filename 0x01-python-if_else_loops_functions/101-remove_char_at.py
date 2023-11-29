@@ -5,4 +5,4 @@ def remove_char_at(str, n):
     for i in range(len(str)):
         if i != n:
             modified_sentence += str[i]
-    return(modified_sentence)
+    return (modified_sentence)

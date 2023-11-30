@@ -9,5 +9,5 @@ print("{} argument{}{}".format(len(args), "s" if len(
 if len(args) > 0:
     index = 1
     for arg in args:
-        print("{}:{} ".format(index, arg))
+        print("{}: {} ".format(index, arg))
         index += 1

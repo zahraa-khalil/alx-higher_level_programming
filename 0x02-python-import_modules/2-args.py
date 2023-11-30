@@ -2,11 +2,11 @@
 if __name__ == '__main__':
     import sys
     name = sys.argv[0]
-    args = sys.argv[1:]
-    print("{} argument{}{}".format(len(args), "s" if len(
-    args) != 1 else "", ":" if len(args) > 0 else "."))
-    if len(args) > 0:
+    argv = sys.argv[1:]
+    print("{} argument{}{}".format(len(argv), "s" if len(
+    argv) != 1 else "", ":" if len(argv) > 0 else "."))
+    if len(argv) > 0:
         index = 1
-        for arg in args:
+        for arg in argv:
             print("{}: {} ".format(index, arg))
             index += 1

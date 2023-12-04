@@ -3,9 +3,8 @@
 /**
  * print_python_list_info - shows info about Python lists
  * @p: object
- * Return: 0
+ * Return: void
  */
-
 void print_python_list_info(PyObject *p)
 {
     int size, alloc, i;

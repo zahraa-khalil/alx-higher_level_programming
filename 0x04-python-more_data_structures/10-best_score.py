@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+#  a function that returns a key with the biggest
+#  integer value.
+def best_score(a_dictionary):
+    maxvalue = 0
+    maxkey = None
+    if a_dictionary:
+        for key, value in a_dictionary.items():
+            if value > maxvalue:
+                maxvalue = value
+                maxkey = key
+        return maxvalue
+    else:
+        return None

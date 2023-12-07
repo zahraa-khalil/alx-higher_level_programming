@@ -28,3 +28,10 @@ if __name__ == "__main__":
 #         for arg in argv:
 #             print("{}: {} ".format(index, arg))
 #             index += 1
+
+
+# lambda function 
+
+# lambda x: 2 * x 
+# lambda x,y: x + y
+# mx = lambda x, y : x if x > y else y

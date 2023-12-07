@@ -11,4 +11,4 @@ def best_score(a_dictionary):
         if value > maxValue:
             maxvalue = value
             maxKey = key
-        return maxKey
+    return maxKey

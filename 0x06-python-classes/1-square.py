@@ -9,4 +9,4 @@ class Square:
         """Constructor
             args: size
         """
-        self.__size = size 
+        self.__size = size

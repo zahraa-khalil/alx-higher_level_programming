@@ -4,9 +4,10 @@
 
 class Square:
     """Define a square"""
+
     def __init__(self, size=0):
         """Construct
-        args; 
+        args:
             size: integer size of a side of a square.
             Raise:
                 TypeError:size must be an integer
@@ -23,4 +24,4 @@ class Square:
 
     def area(self):
         """Return the size of the square"""
-        return (self.size**2)
+        return self.__size**2

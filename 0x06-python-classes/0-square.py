@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Square Module"""
 class Square():
     """Square Class
 
@@ -9,5 +9,6 @@ class Square():
     Returns:
        none
     """
+    pass
 
-my_square = Square()
+

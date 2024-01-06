@@ -6,10 +6,10 @@ class Square:
     """Define a square"""
 
     def __init__(self, size=0):
-        """Constructor: 
-        args: 
+        """Constructor:
+        args:
              size: Integer. length of a side of the square
-         Raises: 
+         Raises:
              TypeError:size must be an integer
              ValueError:size must be >= 0
         """

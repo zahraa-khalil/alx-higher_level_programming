@@ -9,3 +9,5 @@ class Square():
     Returns:
        none
     """
+
+my_square = Square()

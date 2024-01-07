@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Square Module"""
 
+
 class Square():
     """Define a class called Square"""
 
-    def __init__(self, size = 0, position=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Construct
         Args: 
             size: size of sede of square.
@@ -29,7 +30,6 @@ class Square():
             raise ValueError('size must be >= 0')
         self.__size = value
 
-    
     @property
     def position(self):
         """Getter to return position of square"""
@@ -38,8 +38,9 @@ class Square():
     @position.setter
     def position(self, value):
         """Setter to set position of square"""
-        if not isinstance(value, tuple) or len(value) != 2:
-             raise TypeError('position must be a tuple of 2 positive integers')
+        if (not isinstance(value, tuple) or len(value) != 2 or
+                not all(isinstance(num, int) and num >= 0 for num in value)):
+            raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
     def my_print(self):
@@ -53,13 +54,7 @@ class Square():
         if self.__size == 0:
             print()
             return
-        
+
         for row in range(self.__size):
             print(" " * self.__position[0], end="")
             print("#" * self.__size)
-
-    
-
-
-        
-    

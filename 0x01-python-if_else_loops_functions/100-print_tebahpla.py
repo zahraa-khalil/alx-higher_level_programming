@@ -2,7 +2,6 @@
 
 for i in "zYxWvUtSrQpOnMlKjIhGfEdCbA":
     print("{}".format(i), end="")
-
 # for i in range(25, -1, -1):
 #     c = i + ord('A')
 #     if i % 2 == 1:

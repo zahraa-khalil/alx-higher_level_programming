@@ -1,0 +1,16 @@
+``0-add_integer`` module
+=====================
+using ``dd_integer``
+---------------------
+import function from module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test two int arguments
+
+    >>> add_integer(2, 9)
+    11
+
+Test one int arguments
+
+    >>> add_integer(2)
+    100

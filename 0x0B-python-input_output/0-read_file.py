@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """defining readfile function"""
+
+
 def read_file(filename=""):
     """function that reads a text file (UTF8)"""
 

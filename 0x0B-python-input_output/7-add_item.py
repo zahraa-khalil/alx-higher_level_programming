@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""defining function"""
-
+""" Script to add command line arguments to a list
+and save them to a JSON file.
+"""
 
 import sys
 
-
+# Importing functions from their respective files
 save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
@@ -14,6 +15,5 @@ if __name__ == "__main__":
     except FileNotFoundError:
         json_list = []
 
-    for i in range(1, len(sys.argv)):
-        json_list.append(sys.argv[i])
+    json_list.extend(sys.argv[1:])
     save_to_json_file(json_list, "add_item.json")

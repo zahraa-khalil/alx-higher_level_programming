@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-""" Script to add command line arguments to a list
-and save them to a JSON file.
-"""
+""" Script to add command line arguments to a list"""
 
 
 import sys
-
-# Importing functions from their respective files
 save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 

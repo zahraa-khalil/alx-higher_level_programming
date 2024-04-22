@@ -20,13 +20,14 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Convert list of dictionaries"""
         """Construct 
         Args:
             list_dictionaries: list of dictionaries
-            
-            return: json string or [] """
+            return: json string or []
+        """
         if (list_dictionaries) == None or list_dictionaries == "[]":
             return "[]"
         return json.dumps(list_dictionaries)

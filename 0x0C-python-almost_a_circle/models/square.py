@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """square class"""
 
     def __init__(self, size, x=0, y=0, id=None):
         """construct a square
@@ -15,12 +16,8 @@ class Square(Rectangle):
             id: id of square
         """
 
-        super().__init__(id, x, y, size, size)
-        self.size = size
-        self.x = x
-        self.y = y
-        self.id = id
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Returns a strin are"""
+        """Returns a string representation of the square."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"

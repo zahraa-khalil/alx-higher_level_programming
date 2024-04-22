@@ -23,11 +23,11 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Convert list of dictionaries"""
-        """Construct 
+        """Construct
         Args:
             list_dictionaries: list of dictionaries
             return: json string or []
         """
-        if (list_dictionaries) == None or list_dictionaries == "[]":
+        if (list_dictionaries) is None or list_dictionaries == "[]":
             return "[]"
         return json.dumps(list_dictionaries)

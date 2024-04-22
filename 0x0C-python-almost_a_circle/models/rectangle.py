@@ -94,7 +94,7 @@ class Rectangle(Base):
                 + f"{self.width}/{self.height}")
 
     def update(self, *args):
-        # Check the number of arguments and assign accordingly
+        """ Check the number of arguments and assign accordingly"""
         if len(args) > 0:
             self.id = args[0]
         if len(args) >= 2:

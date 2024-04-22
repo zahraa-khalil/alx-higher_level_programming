@@ -39,8 +39,20 @@ class Base:
             list_objs: list of objects
             return: None
         """
-        if (list_objs is None):
-            list_objs = []
-        filename = cls.__name__ + ".json"
-        with open(filename, 'w',  encoding='utf-8') as f:
-            f.write(cls.to_json_string(list_objs))
+        # filename = cls.__name__ + ".json"
+        # with open(filename, 'w',  encoding='utf-8') as f:
+        #     f.write(cls.to_json_string(list_objs))
+
+        filename = "{}.json".format(cls.__name__)
+        list_dic = []
+
+        if not list_objs:
+            pass
+        else:
+            for i in range(len(list_objs)):
+                list_dic.append(list_objs[i].to_dictionary())
+
+        lists = cls.to_json_string(list_dic)
+
+        with open(filename, 'w') as f:
+            f.write(lists)

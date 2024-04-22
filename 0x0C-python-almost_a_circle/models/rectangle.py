@@ -21,7 +21,6 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        
 
     @property
     def height(self):
@@ -82,11 +81,14 @@ class Rectangle(Base):
     def area(self):
         """Return the area of the rectangle"""
         return self.width * self.height
-    
+
     def display(self):
         """Display the rectangle"""
         for _ in range(self.height):
             print('#' * self.width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} -"
+                + f"{self.width}/{self.height}")
+
+    # def update(self, *args):

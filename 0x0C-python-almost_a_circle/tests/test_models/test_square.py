@@ -36,3 +36,27 @@ class TestSquare(unittest.TestCase):
         """Test the area calculation inherited from Rectangle."""
         square = Square(7)
         self.assertEqual(square.area(), 49)
+    
+    def test_update(self):
+        """Test updating attributes using args and kwargs."""
+        square = Square(1, 1, 1, 1)
+        square.update(2, 3, 4, 5)
+        self.assertEqual((square.id, square.size, square.x, square.y), (2, 3, 4, 5))
+
+        square.update(size=10, x=20, y=30, id=40)
+        self.assertEqual((square.id, square.size, square.x, square.y), (40, 10, 20, 30))
+    
+    def test_to_dictionary(self):
+        """Test the to_dictionary method."""
+        square = Square(10, 5, 5, 1)
+        expected_dict = {'id': 1, 'size': 10, 'x': 5, 'y': 5}
+        self.assertDictEqual(square.to_dictionary(), expected_dict)
+    
+    def test_str(self):
+        """Test the string representation of the square."""
+        square = Square(10, 2, 3, 4)
+        self.assertEqual(str(square), "[Square] (4) 2/3 - 10")
+
+
+
+

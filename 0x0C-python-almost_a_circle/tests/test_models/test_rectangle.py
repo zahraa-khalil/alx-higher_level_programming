@@ -50,3 +50,20 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 10)
         self.assertEqual(rect.y, 10)
         self.assertEqual(rect.id, 10)
+
+    def test_update(self):
+        """Test updating attributes with args and kwargs."""
+        rect = Rectangle(1, 1, 1, 1, 1)
+        rect.update(2, 3, 4, 5, 6)
+        self.assertEqual((rect.id, rect.width, rect.height, rect.x, rect.y), (2, 3, 4, 5, 6))
+
+        rect.update(height=7, width=8, x=9, y=10, id=11)
+        self.assertEqual((rect.id, rect.width, rect.height, rect.x, rect.y), (11, 8, 7, 9, 10))
+    
+    def test_to_dictionary(self):
+        """Test dictionary representation of Rectangle."""
+        rect = Rectangle(10, 15, 5, 5, 1)
+        rect_dict = rect.to_dictionary()
+        self.assertDictEqual(rect_dict, {'id': 1, 'width': 10, 'height': 15, 'x': 5, 'y': 5})
+
+

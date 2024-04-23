@@ -58,6 +58,14 @@ class TestBase(unittest.TestCase):
         obj = Base.create(**dictionary)
         self.assertEqual(obj.id, dictionary["id"])
 
+    def test_to_json_string(self):
+        """Test JSON string conversion."""
+        dict_list = [{"id": 1}, {"id": 2}]
+        json_str = Base.to_json_string(dict_list)
+        self.assertEqual(json_str, json.dumps(dict_list))
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+
 
 
 

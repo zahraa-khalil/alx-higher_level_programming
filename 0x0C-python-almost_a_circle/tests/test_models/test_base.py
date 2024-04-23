@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import unittest
 
 from models.base import Base
@@ -32,6 +33,32 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base5.id, 20, "Explicit ID for base5 should be 20")
         self.assertEqual(
             base6.id, 4, "Auto-incremented ID for base6 should be 4 after an explicit ID assignment")
+    
+    def test_create_instance(self):
+        """Test creating an instance from dictionary."""
+        dictionary = {"id": 1, "width": 10, "height": 15}
+        obj = Base.create(**dictionary)
+        self.assertEqual(obj.id, dictionary["id"])
+    
+    def test_save_to_file_and_load(self):
+        """Test saving to a file and loading from it."""
+        base1 = Base(1)
+        base2 = Base(2)
+        Base.save_to_file([base1, base2])
+        list_loaded = Base.load_from_file()
+        self.assertIsInstance(list_loaded, list)
+        self.assertEqual(len(list_loaded), 2)
+        
+        # Clean up created file
+        os.remove("Base.json")
+    
+    def test_create_instance(self):
+        """Test creating an instance from dictionary."""
+        dictionary = {"id": 1, "width": 10, "height": 15}
+        obj = Base.create(**dictionary)
+        self.assertEqual(obj.id, dictionary["id"])
+
+
 
 
 if __name__ == '__main__':

@@ -54,13 +54,13 @@ class Rectangle:
             return (self.width + self.height) * 2
 
     def __str__(self):
-        return self.print()
+        return self.build_representation()
 
-    def print(self):
-        """Print in stdout the square with the character #.
+    def build_representation(self):
+        """Print in stdout the Rectangle with the character #.
         if size is 0: print empty line
         """
-        for row in range(self.__height):
-            for cloumn in range(self.__width):
-                print('#', end="")
-            print()
+        if self.width == 0 or self.height == 0:
+            return ""
+        return "\n".join("#" * self.width for _ in range(self.height))
+            

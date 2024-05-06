@@ -57,7 +57,7 @@ class Rectangle:
         return self.build_representation()
 
     def build_representation(self):
-        """build_representation in stdout the Rectangle with 
+        """build_representation in stdout the Rectangle with
         the character #. if size is 0: print empty line
         """
         if self.width == 0 or self.height == 0:

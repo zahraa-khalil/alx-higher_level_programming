@@ -63,3 +63,11 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join("#" * self.width for _ in range(self.height))
+    
+    def __repr__(self):
+        return "Rectangle({0}, {1})".format(self.width, self.height)
+
+    @staticmethod
+    def __del__():
+        """Prints message upon deletion of instance"""
+        print('Bye rectangle...')

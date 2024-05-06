@@ -52,10 +52,8 @@ class Rectangle:
             return 0
         else:
             return (self.width + self.height) * 2
-        
 
     def __str__(self):
-        # return f"Area: {self.area()} - Perimeter: {self.perimeter()}"
         return self.print()
 
     def print(self):
@@ -66,4 +64,3 @@ class Rectangle:
             for cloumn in range(self.__width):
                 print('#', end="")
             print()
-  

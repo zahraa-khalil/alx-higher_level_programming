@@ -4,13 +4,17 @@
 
 class Rectangle:
     """Rectangle class
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
     Args:
     width: width of the rectangle
     height: height of the rectangle
     Returns: None
     """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -67,7 +71,7 @@ class Rectangle:
     def __repr__(self):
         return "Rectangle({0}, {1})".format(self.width, self.height)
 
-    @staticmethod
-    def __del__():
+    def __del__(self):
         """Prints message upon deletion of instance"""
+        type(self).number_of_instances -= 1
         print('Bye rectangle...')

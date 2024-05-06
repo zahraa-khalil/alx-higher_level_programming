@@ -4,7 +4,7 @@
 
 class Rectangle:
     """Rectangle class
-    Args: 
+    Args:
     width: width of the rectangle
     height: height of the rectangle
     Returns: None

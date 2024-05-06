@@ -68,7 +68,10 @@ class Rectangle:
         """
         if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join(str(self.print_symbol) * self.width for _ in range(self.height))
+        return "\n".join(
+            str(self.print_symbol) * self.width
+            for _ in range(self.height)
+        )
 
     def __repr__(self):
         return "Rectangle({0}, {1})".format(self.width, self.height)
@@ -77,3 +80,11 @@ class Rectangle:
         """Prints message upon deletion of instance"""
         type(self).number_of_instances -= 1
         print('Bye rectangle...')
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """returns the biggest rectangle based on the area"""
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2

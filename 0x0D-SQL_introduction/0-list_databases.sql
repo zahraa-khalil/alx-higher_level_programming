@@ -1,2 +1,2 @@
--- script that lists all databases of your MySQL server.
-SELECT * databases FROM pg_database
+-- script that lists all databases of your MySQL server
+SHOW DATABASES;

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 /* print first argument converted in integer */
 
 let num = parseInt(process.argv[2])

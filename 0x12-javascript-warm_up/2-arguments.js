@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 /* print argv */
 
 if (process.argv.length === 2) {

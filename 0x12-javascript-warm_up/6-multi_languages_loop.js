@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 /* print first argument converted in integer */
 
 let arr =  ['C is fun', 'Python is cool','JavaScript is amazing']

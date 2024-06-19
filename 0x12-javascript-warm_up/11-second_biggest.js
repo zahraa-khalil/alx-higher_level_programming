@@ -4,9 +4,8 @@
 let largetstNum = process.argv[2];
 let secondLargestNum = process.argv[3];
 
-
 if (process.argv.length <= 3) {
-  console.log(0);
+  console.log('0');
 } else {
   for (let i = 2; i < process.argv.length; i++) {
     if (largetstNum < process.argv[i]) {

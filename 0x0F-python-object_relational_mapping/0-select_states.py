@@ -1,22 +1,34 @@
 #!/usr/bin/python3
-"""Lists states"""
-
+"""List from table state"""
 import MySQLdb
-from sys import argv
+import sys
+
+"""Replace these values with your actual database credentials"""
+mysql_username = sys.argv[1]
+mysql_password = sys.argv[2]
+database_name = sys.argv[3]
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3],
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name,
         charset="utf8",
     )
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
+
+    """ Create a cursor object to interact with the database"""
+    cursor = db.cursor()
+
+    """ Execute a query"""
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+
+    rows = cursor.fetchall()
+
+    for row in rows:
         print(row)
-    cur.close()
-    conn.close()
+
+    """ Close the cursor and connection """
+    cursor.close()
+    db.close()

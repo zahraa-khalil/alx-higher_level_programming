@@ -1,23 +1,34 @@
-#!/usr/bin/python3
-""" Script that lists all states from the database hbtn_0e_0_usa """
+#!/usr/bin/env python3
+
 import MySQLdb
-from sys import argv
+import sys
 
-# The code should not be executed when imported
-if __name__ == '__main__':
+# Replace these values with your actual database credentials
+mysql_username = sys.argv[1]
+mysql_password = sys.argv[2]
+database_name = sys.argv[3]
 
-    # make a connection to the database
-    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                         passwd=argv[2], db=argv[3])
+if __name__ == "__main__":
+	db = MySQLdb.connect(
+    	host="localhost",
+    	port=3306,
+    	user=mysql_username,
+    	passwd=mysql_password,
+    	db=database_name,
+    	charset="utf8"
+	)
 
-    # It gives us the ability to have multiple seperate working environments
-    # through the same connection to the database.
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states")
+	# Create a cursor object to interact with the database
+	cursor = db.cursor()
 
-    rows = cur.fetchall()
-    for i in rows:
-        print(i)
-    # Clean up process
-    cur.close()
-    db.close()
+	# Execute a query
+	cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+
+	rows = cursor.fetchall()
+
+	for row in rows:
+		print(row)
+
+	# Close the cursor and connection
+	cursor.close()
+	db.close()

@@ -7,7 +7,6 @@ if __name__ == "__main__":
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
-    state_name = argv[4]
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -17,15 +16,15 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = db.cursor()
-    query = """
-    SELECT cities.name
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name = %s;
-    """
-    cursor.execute(query, (state_name,))
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%'"
+                   " ORDER BY states.id ASC")
     rows = cursor.fetchall()
-    city_names = [row[0] for row in rows]
-    print(", ".join(city_names))
+    for row in rows:
+        # Decode and cast each column appropriately
+        decoded_row = (
+            int(row[0]),
+            row[1].decode('utf-8') if isinstance(row[1], bytes) else row[1]
+        )
+        print(decoded_row)
     cursor.close()
     db.close()

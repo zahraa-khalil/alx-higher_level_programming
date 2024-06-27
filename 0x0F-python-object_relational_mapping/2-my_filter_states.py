@@ -17,9 +17,13 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY name LIKE %s "
-    "ORDER BY states.id ASC"
-    cursor.execute(query, (argument + '%',))
+    # query = "SELECT * FROM states WHERE BINARY name LIKE %s "
+    # "ORDER BY states.id ASC"
+    # cursor.execute(query, (argument + '%',))
+
+    query = ("SELECT * FROM states WHERE BINARY name LIKE '{}'"
+             " ORDER BY states.id ASC").format(argument)
+    cursor.execute(query)
     rows = cursor.fetchall()
     for row in rows:
         # Decode and cast each column appropriately

@@ -14,8 +14,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.id == 1)
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    states = session.query(State).filter(State.id == 1).first()
+    if states:
+        print(f"{states.id}: {states.name}")
+    else:
+        print("Nothing")
 
     session.close()

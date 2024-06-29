@@ -16,9 +16,9 @@ if __name__ == "__main__":
     session = Session()
     letter = 'a'
     states = session.query(State).filter(State.name.like(f'%{letter}%')).all()
-    if states:
-        for state in states:
-            session.delete(state)
-        session.commit()
+  
+    for state in states:
+        session.delete(state)
+    session.commit()
 
     session.close()

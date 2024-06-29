@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List all states"""
+"""List first state"""
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.id == 1).all()
+    states = session.query(State).filter(State.id == 1)
     for state in states:
         print(f"{state.id}: {state.name}")
 

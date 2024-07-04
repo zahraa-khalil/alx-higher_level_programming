@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Function to find the peak of list of integers"""
+""" finding peak in list """
 
 
 def find_peak(list_of_integers):
-    """Finds the peak of list of integers"""
-    peak = max(list_of_integers)
-    print(peak)
+    """BRUTE force implementation for question
+    """
+    max_i = None
+    for ele in list_of_integers:
+        if max_i is None or max_i < ele:
+            max_i = ele
+    return max_i

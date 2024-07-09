@@ -3,6 +3,7 @@
 
 
 def find_peak(list_of_integers):
+    """Find peak in list of ints"""
     def find_peak_util(arr, low, high, n):
         mid = low + (high - low) // 2
         if ((mid == 0 or arr[mid - 1] <= arr[mid]) and
@@ -16,4 +17,5 @@ def find_peak(list_of_integers):
     if not list_of_integers:
         return None
 
-    return find_peak_util(list_of_integers, 0, len(list_of_integers) - 1, len(list_of_integers))
+    return find_peak_util(list_of_integers, 0,
+                          len(list_of_integers) - 1, len(list_of_integers))

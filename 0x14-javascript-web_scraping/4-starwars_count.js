@@ -5,7 +5,7 @@ const URL = process.argv[2];
 const character = 'https://swapi-api.alx-tools.com/api/people/18/';
 let count = 0;
 
-request(URL, (err, res, body) => {
+request(URL, { json: true }, (err, res, body) => {
   if (err) { return console.log(err); }
 
   if (!body.results || !Array.isArray(body.results)) {
